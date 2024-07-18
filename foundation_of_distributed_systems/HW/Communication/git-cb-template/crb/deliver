@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+SCRIPTDIR="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
+
+INTERVAL=$1
+
+if ! $SCRIPTDIR/repo-valid '.'; then
+    exit 1
+fi
+
+if [ -z "$INTERVAL" ]; then
+    $SCRIPTDIR/repo-merge
+    $SCRIPTDIR/repo-deliver
+else
+    while true; do
+        $SCRIPTDIR/repo-merge
+        if ! $SCRIPTDIR/repo-deliver; then
+            exit 1
+        fi
+        sleep $INTERVAL
+    done
+fi

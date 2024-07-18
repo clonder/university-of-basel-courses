@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+# This Git command fetches the latest updates from the remote repository specified by $ORIGIN
+
+
+SCRIPTDIR="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
+
+ORIGIN=$1
+
+# Get the name of the current local branch (the directory name).
+LOCAL=$(basename $(pwd))
+
+
+if ! $SCRIPTDIR/repo-valid '.'; then
+    exit 1
+fi
+
+if [ -z "$ORIGIN" ]; then
+    echo "Empty origin '$ORIGIN'" >&2
+    exit 1
+fi
+
+if ! git remote show $ORIGIN 1>/dev/null 2>/dev/null; then
+    echo "Remote repository at '$ORIGIN' unknown. Please add with 'git remote add $ORIGIN URL' first." >&2
+    exit 1
+fi
+
+# Fetch the latest updates from the remote repository for all remote branches and store them as remote tracking branches.
+git fetch $ORIGIN "refs/heads/*:refs/remotes/$ORIGIN/*"

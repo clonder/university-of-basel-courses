@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.0.0">
+  <zoom_level>14</zoom_level>
+  <element>
+    <id>UMLHierarchy</id>
+    <coordinates>
+      <x>378</x>
+      <y>700</y>
+      <w>308</w>
+      <h>266</h>
+    </coordinates>
+    <panel_attributes>type=Package
+input
+	gutenberg
+		4300-8.txt
+		5000-8.txt
+		20417-8.txt
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>882</x>
+      <y>798</y>
+      <w>518</w>
+      <h>322</h>
+    </coordinates>
+    <panel_attributes>lt=.
+
+map()
+
+--
+key: Text =&gt; The word as key
+value: IntWritable =&gt; Integer as indice of occurence
+--
+T: &lt;key:Text, value:IntWritable&gt;
+Examples:
+&lt;Hello,1&gt;
+&lt;World,1&gt;
+&lt;Hello,1&gt;
+&lt;Sun,1&gt;
+&lt;Hello,1&gt;
+&lt;Pluto,1&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1512</x>
+      <y>798</y>
+      <w>616</w>
+      <h>322</h>
+    </coordinates>
+    <panel_attributes>lt=.
+
+reduce()
+
+--
+key: Text =&gt; The word as key
+value: IntWritable =&gt; Integer as count of occurence
+--
+Examples:
+T: &lt;key:Text, value:IntWritable&gt;
+&lt;Hello,3&gt;
+&lt;World,1&gt;
+&lt;Sun,1&gt;
+&lt;Pluto,1&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>742</x>
+      <y>700</y>
+      <w>1512</w>
+      <h>434</h>
+    </coordinates>
+    <panel_attributes>
+WordCount
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>2380</x>
+      <y>812</y>
+      <w>210</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>gutenberg
+--
+..
+abandoned 12
+abandoning 3
+..
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLHierarchy</id>
+    <coordinates>
+      <x>2310</x>
+      <y>700</y>
+      <w>308</w>
+      <h>266</h>
+    </coordinates>
+    <panel_attributes>type=Package
+output
+	gutenberg</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>672</x>
+      <y>826</y>
+      <w>98</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=[&gt;]-[&gt;]</panel_attributes>
+    <additional_attributes>10.0;10.0;50.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>728</x>
+      <y>826</y>
+      <w>182</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=[&gt;]-[&gt;]</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1386</x>
+      <y>826</y>
+      <w>154</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=[&gt;]-[&gt;]</panel_attributes>
+    <additional_attributes>10.0;10.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2114</x>
+      <y>826</y>
+      <w>168</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=[&gt;]-[&gt;]</panel_attributes>
+    <additional_attributes>10.0;10.0;100.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2240</x>
+      <y>826</y>
+      <w>98</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=[&gt;]-[&gt;]</panel_attributes>
+    <additional_attributes>10.0;10.0;50.0;10.0</additional_attributes>
+  </element>
+</diagram>

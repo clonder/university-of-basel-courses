@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+# This script operates on Git branches, ensuring synchronization between local and remote branches.
+
+SCRIPTDIR="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
+
+if ! $SCRIPTDIR/repo-valid '.'; then
+    exit 1
+fi
+
+# Retrieve a list of local branch references and store them in the LOCALS variable.
+LOCALS=$(git show-ref --head | grep refs/heads/* | awk '{print $2}')
+
+# Retrieve a list of remote branch references and store them in the REMOTES variable.
+REMOTES=$(git show-ref --head | grep refs/remotes/* | awk '{print $2}')
+
+# Loop through each local branch.
+for local in $LOCALS; do
+    # Extract the author name from the local branch reference.
+    AUTHOR_LOCAL=$(basename "$local")
+
+    # Loop through each remote branch.
+    for remote in "$REMOTES"; do
+
+        # Extract the author name from the remote branch reference.
+        AUTHOR_REM=$(basename "$remote")
+        # Retrieve the hash of the remote branch's head.
+        REMOTE_PREV=$(git show-ref --head | grep $remote | awk '{print $1}')
+
+        # Check if a local branch corresponding to the remote branch exists.
+        if ! git show-ref --verify --quiet "refs/heads/$AUTHOR_REM"; then
+            # If it doesn't exist, create a new local branch based on the remote branch.
+            git branch $AUTHOR_REM $REMOTE_PREV
+        else
+            # If the local branch exists, check if the remote branch is an ancestor of the local branch.
+            if ! git merge-base --is-ancestor $AUTHOR_REM $remote; then
+                # If not, it means the local branch needs to be updated to match the remote branch.
+                # Fetch the latest changes from the remote branch.
+                git fetch $remote
+                # Update the reference of the local branch to point to the new remote head.
+                git update-ref refs/heads/$AUTHOR_LOCAL $REMOTE_PREV
+            fi
+        fi
+    done
+done

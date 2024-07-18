@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.0.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>850</x>
+      <y>580</y>
+      <w>200</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>Plane
+--
+type
+manufacturer
+issue_date
+model
+status
+aircraft_type
+engine_type
+year
+valign=top</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>60</x>
+      <y>580</y>
+      <w>200</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>Airport
+--
+iata
+airpor
+city
+state
+country
+valign=top</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>460</x>
+      <y>580</y>
+      <w>200</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>Flight
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>460</x>
+      <y>270</y>
+      <w>200</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>Carrier
+--
+code
+sescription
+valign=top</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>230</x>
+      <y>600</y>
+      <w>270</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+from
+(F.origin = A.iata)</panel_attributes>
+    <additional_attributes>10.0;20.0;250.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>230</x>
+      <y>710</y>
+      <w>270</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+to
+(F.dest = A.iata)</panel_attributes>
+    <additional_attributes>10.0;23.0;250.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>550</x>
+      <y>450</y>
+      <w>200</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+performedBy
+(F.uniqueCarrier = C.code)</panel_attributes>
+    <additional_attributes>10.0;130.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>650</x>
+      <y>650</y>
+      <w>220</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+executedWith
+(F.tailNum = P.tailnum)</panel_attributes>
+    <additional_attributes>200.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>460</x>
+      <y>940</y>
+      <w>200</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>Cancelationn
+--
+code
+sescription
+valign=top</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>50</x>
+      <y>270</y>
+      <w>200</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>Fuel
+--
+year
+quarter
+month
+airlineID
+uniqueCarrier
+carrier
+carrierName
+totalGallons
+totalCost  
+valign=top</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>240</x>
+      <y>340</y>
+      <w>240</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+consumed
+(F.uniqueCarrier = C.code)</panel_attributes>
+    <additional_attributes>220.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>550</x>
+      <y>760</y>
+      <w>220</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+cancelledBy
+(F.cancellationCode = C.code)</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;180.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>200</x>
+      <y>830</y>
+      <w>180</w>
+      <h>450</h>
+    </coordinates>
+    <panel_attributes>  Flight attributes
+--
+  year               
+  month              
+  day                
+  uniqueCarrier      
+  airlineID          
+  carrier            
+  tailNum            
+  flightNum          
+  origin             
+  dest               
+  destCityName       
+  destState          
+  depTime            
+  depDelay           
+  depDelayMinutes    
+  taxiOut            
+  wheelsOff          
+  wheelsOn           
+  taxiIn             
+  cancelled          
+  cancellationCode   
+  airTime            
+  flights            
+  distance           
+  arrDelay           
+  arrTime   
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

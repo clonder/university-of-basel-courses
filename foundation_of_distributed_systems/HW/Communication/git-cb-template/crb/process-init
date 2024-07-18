@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+SCRIPTDIR="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
+
+NAME=$1
+
+if [ -z $NAME ]; then 
+    echo "Empty process name '$NAME'" >&2
+    exit 1
+fi
+
+if ! $SCRIPTDIR/repo-init $NAME; then
+    echo "Error creating repository '$NAME'" >&2
+    exit 1
+fi
+
+cd $NAME
+if ! $SCRIPTDIR/author-init $NAME; then
+    echo "Error author '$NAME' within repository '$NAME'" >&2
+    exit 1
+fi

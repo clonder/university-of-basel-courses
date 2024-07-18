@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.0.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLHierarchy</id>
+    <coordinates>
+      <x>570</x>
+      <y>440</y>
+      <w>300</w>
+      <h>290</h>
+    </coordinates>
+    <panel_attributes>type=Package
+input
+	amz
+		reviewTxt#
+			reviewTxt1.txt
+			reviewTxt2.txt
+			..
+			reviewTxtN..txt</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1020</x>
+      <y>550</y>
+      <w>370</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>lt=.
+
+map()
+
+--
+key: Text =&gt; As ReviewId
+value: Text =&gt; As review text with wordd in setup
+--
+T: &lt;key:Text, value:IntPairWritable&gt;
+&lt;R000000002D,Hello World&gt; 
+&lt;R000000002E,Hello sun&gt; 
+&lt;R000000002F,Hello Hello)&gt; </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1460</x>
+      <y>550</y>
+      <w>440</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>lt=.
+
+reduce()
+
+--
+key: Text =&gt; The ReviewId as key
+value: IntPairWritable =&gt; Integer as count of pos and neg occurence
+--
+T: &lt;key:Text, value:IntPairWritable&gt;
+&lt;R000000002D,(2,2)&gt; 
+&lt;R000000002E,(2,2)&gt;
+&lt;R000000002F,(4,2))&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>910</x>
+      <y>290</y>
+      <w>1080</w>
+      <h>440</h>
+    </coordinates>
+    <panel_attributes>
+PosNegReviewCounter
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>2090</x>
+      <y>540</y>
+      <w>230</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>reviewTxt
+--
+..
+R000000002D	48059 48387
+R000000002E	48059 48387
+R000000002F	40763 46913
+..
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLHierarchy</id>
+    <coordinates>
+      <x>2030</x>
+      <y>290</y>
+      <w>300</w>
+      <h>440</h>
+    </coordinates>
+    <panel_attributes>type=Package
+output
+	amz
+		reviewTxt</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>860</x>
+      <y>570</y>
+      <w>70</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=[&gt;]-[&gt;]</panel_attributes>
+    <additional_attributes>10.0;10.0;50.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>900</x>
+      <y>570</y>
+      <w>140</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=[&gt;]-[&gt;]</panel_attributes>
+    <additional_attributes>10.0;10.0;120.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1380</x>
+      <y>570</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=[&gt;]-[&gt;]</panel_attributes>
+    <additional_attributes>10.0;10.0;80.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1890</x>
+      <y>570</y>
+      <w>120</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=[&gt;]-[&gt;]</panel_attributes>
+    <additional_attributes>10.0;10.0;100.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1980</x>
+      <y>570</y>
+      <w>70</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=[&gt;]-[&gt;]</panel_attributes>
+    <additional_attributes>10.0;10.0;50.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1020</x>
+      <y>340</y>
+      <w>370</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>lt=.
+
+setup()
+
+--
+key: Text =&gt; The word as key
+value: IntPairWritable =&gt; as count pos/neg occurence
+--
+T: &lt;key:Text, value:IntPairWritable&gt;
+&lt;Hello,(2,1)&gt;
+&lt;World,(0,1)&gt;
+&lt;Sun,(0,1)&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>900</x>
+      <y>370</y>
+      <w>140</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=[&gt;]-[&gt;]</panel_attributes>
+    <additional_attributes>10.0;10.0;120.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLHierarchy</id>
+    <coordinates>
+      <x>570</x>
+      <y>290</y>
+      <w>300</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>type=Package
+output
+	acl</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>860</x>
+      <y>370</y>
+      <w>70</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=[&gt;]-[&gt;]</panel_attributes>
+    <additional_attributes>10.0;10.0;50.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1190</x>
+      <y>510</y>
+      <w>30</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=[&gt;]-[&gt;]</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+</diagram>

@@ -1,0 +1,565 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.0.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLHierarchy</id>
+    <coordinates>
+      <x>990</x>
+      <y>0</y>
+      <w>310</w>
+      <h>330</h>
+    </coordinates>
+    <panel_attributes>type=Package
+input
+	acl
+		neg.txt
+		pos.txt
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1440</x>
+      <y>70</y>
+      <w>370</w>
+      <h>230</h>
+    </coordinates>
+    <panel_attributes>lt=.
+
+map()
+
+--
+key: Text =&gt; The word as key
+value: IntPairWritable =&gt; Integer as indice of occurence
+--
+T: &lt;key:Text, value:IntPairWritable&gt;
+Examples:
+&lt;Hello,(0,1)&gt; from neg.txt
+&lt;World,(0,1)&gt; from neg.txt
+&lt;Hello,(1,0)&gt; from pos.txt
+&lt;Sun,(0,1)&gt; from neg.txt
+&lt;Hello,(1,0)&gt; from pos.txt
+&lt;Pluto,(1,0)&gt; from pos.txt</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1890</x>
+      <y>70</y>
+      <w>440</w>
+      <h>230</h>
+    </coordinates>
+    <panel_attributes>lt=.
+
+reduce()
+
+--
+key: Text =&gt; The word as key
+value: IntPairWritable =&gt; Integer as count of occurence
+--
+Examples:
+T: &lt;key:Text, value:IntPairWritable&gt;
+&lt;Hello,(2,1)&gt;
+&lt;World,(0,1)&gt;
+&lt;Sun,(0,1)&gt;
+&lt;Pluto,(1,0)&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1340</x>
+      <y>0</y>
+      <w>1080</w>
+      <h>330</h>
+    </coordinates>
+    <panel_attributes>
+PosNegCounter
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>2610</x>
+      <y>140</y>
+      <w>150</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>acl
+--
+..
+greasy	 6 10
+great	 6416 2641
+greater	 115 58
+greatest	 549 196
+greatfully	 1 0
+..
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLHierarchy</id>
+    <coordinates>
+      <x>2460</x>
+      <y>0</y>
+      <w>310</w>
+      <h>330</h>
+    </coordinates>
+    <panel_attributes>type=Package
+output
+	acl</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1290</x>
+      <y>90</y>
+      <w>70</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=[&gt;]-[&gt;]</panel_attributes>
+    <additional_attributes>10.0;10.0;50.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1330</x>
+      <y>90</y>
+      <w>130</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=[&gt;]-[&gt;]</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1800</x>
+      <y>90</y>
+      <w>110</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=[&gt;]-[&gt;]</panel_attributes>
+    <additional_attributes>10.0;10.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2320</x>
+      <y>90</y>
+      <w>120</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=[&gt;]-[&gt;]</panel_attributes>
+    <additional_attributes>10.0;10.0;100.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2410</x>
+      <y>90</y>
+      <w>70</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=[&gt;]-[&gt;]</panel_attributes>
+    <additional_attributes>10.0;10.0;50.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLHierarchy</id>
+    <coordinates>
+      <x>1000</x>
+      <y>570</y>
+      <w>300</w>
+      <h>330</h>
+    </coordinates>
+    <panel_attributes>type=Package
+input
+	amz
+		reviewTxt
+			reviewTxt1.txt
+			reviewTxt2.txt
+		..
+			reviewTxtN..txt</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1450</x>
+      <y>640</y>
+      <w>370</w>
+      <h>230</h>
+    </coordinates>
+    <panel_attributes>lt=.
+
+map()
+
+--
+key: Text =&gt; The word as key
+value: IntPairWritable =&gt; Integer as indice of occurence
+--
+T: &lt;key:Text, value:IntPairWritable&gt;
+Examples:
+&lt;Hello,(0,1)&gt; from neg.txt
+&lt;World,(0,1)&gt; from neg.txt
+&lt;Hello,(1,0)&gt; from pos.txt
+&lt;Sun,(0,1)&gt; from neg.txt
+&lt;Hello,(1,0)&gt; from pos.txt
+&lt;Pluto,(1,0)&gt; from pos.txt</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1890</x>
+      <y>640</y>
+      <w>440</w>
+      <h>230</h>
+    </coordinates>
+    <panel_attributes>lt=.
+
+reduce()
+
+--
+key: Text =&gt; The word as key
+value: IntPairWritable =&gt; Integer as count of occurence
+--
+Examples:
+T: &lt;key:Text, value:IntPairWritable&gt;
+&lt;Hello,(2,1)&gt;
+&lt;World,(0,1)&gt;
+&lt;Sun,(0,1)&gt;
+&lt;Pluto,(1,0)&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1340</x>
+      <y>460</y>
+      <w>1080</w>
+      <h>440</h>
+    </coordinates>
+    <panel_attributes>
+PosNegReviewCounter
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>2600</x>
+      <y>710</y>
+      <w>150</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>reviewTxt
+--
+..
+greasy	 6 10
+great	 6416 2641
+greater	 115 58
+greatest	 549 196
+greatfully	 1 0
+..
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLHierarchy</id>
+    <coordinates>
+      <x>2460</x>
+      <y>570</y>
+      <w>300</w>
+      <h>330</h>
+    </coordinates>
+    <panel_attributes>type=Package
+output
+	amz
+		reviewTxt</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1290</x>
+      <y>660</y>
+      <w>70</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=[&gt;]-[&gt;]</panel_attributes>
+    <additional_attributes>10.0;10.0;50.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1330</x>
+      <y>660</y>
+      <w>140</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=[&gt;]-[&gt;]</panel_attributes>
+    <additional_attributes>10.0;10.0;120.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1810</x>
+      <y>660</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=[&gt;]-[&gt;]</panel_attributes>
+    <additional_attributes>10.0;10.0;80.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2320</x>
+      <y>660</y>
+      <w>120</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=[&gt;]-[&gt;]</panel_attributes>
+    <additional_attributes>10.0;10.0;100.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2410</x>
+      <y>660</y>
+      <w>70</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=[&gt;]-[&gt;]</panel_attributes>
+    <additional_attributes>10.0;10.0;50.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1450</x>
+      <y>510</y>
+      <w>370</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=.
+
+setup()
+
+--
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1330</x>
+      <y>540</y>
+      <w>140</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=[&gt;]-[&gt;]</panel_attributes>
+    <additional_attributes>10.0;10.0;120.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLHierarchy</id>
+    <coordinates>
+      <x>1000</x>
+      <y>1160</y>
+      <w>300</w>
+      <h>330</h>
+    </coordinates>
+    <panel_attributes>type=Package
+input
+	amz
+		reviewTxt
+			reviewTxt1.txt
+			reviewTxt2.txt
+		..
+			reviewTxtN..txt</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1450</x>
+      <y>1230</y>
+      <w>370</w>
+      <h>230</h>
+    </coordinates>
+    <panel_attributes>lt=.
+
+map()
+
+--
+key: Text =&gt; The word as key
+value: IntPairWritable =&gt; Integer as indice of occurence
+--
+T: &lt;key:Text, value:IntPairWritable&gt;
+Examples:
+&lt;Hello,(0,1)&gt; from neg.txt
+&lt;World,(0,1)&gt; from neg.txt
+&lt;Hello,(1,0)&gt; from pos.txt
+&lt;Sun,(0,1)&gt; from neg.txt
+&lt;Hello,(1,0)&gt; from pos.txt
+&lt;Pluto,(1,0)&gt; from pos.txt</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1890</x>
+      <y>1230</y>
+      <w>440</w>
+      <h>230</h>
+    </coordinates>
+    <panel_attributes>lt=.
+
+reduce()
+
+--
+key: Text =&gt; The word as key
+value: IntPairWritable =&gt; Integer as count of occurence
+--
+Examples:
+T: &lt;key:Text, value:IntPairWritable&gt;
+&lt;Hello,(2,1)&gt;
+&lt;World,(0,1)&gt;
+&lt;Sun,(0,1)&gt;
+&lt;Pluto,(1,0)&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1340</x>
+      <y>1050</y>
+      <w>1080</w>
+      <h>440</h>
+    </coordinates>
+    <panel_attributes>
+PosNegReviewCounter
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>2600</x>
+      <y>1300</y>
+      <w>150</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>reviewTxt
+--
+..
+greasy	 6 10
+great	 6416 2641
+greater	 115 58
+greatest	 549 196
+greatfully	 1 0
+..
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLHierarchy</id>
+    <coordinates>
+      <x>2460</x>
+      <y>1160</y>
+      <w>300</w>
+      <h>330</h>
+    </coordinates>
+    <panel_attributes>type=Package
+output
+	amz
+		reviewTxt</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1290</x>
+      <y>1250</y>
+      <w>70</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=[&gt;]-[&gt;]</panel_attributes>
+    <additional_attributes>10.0;10.0;50.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1330</x>
+      <y>1250</y>
+      <w>140</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=[&gt;]-[&gt;]</panel_attributes>
+    <additional_attributes>10.0;10.0;120.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1810</x>
+      <y>1250</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=[&gt;]-[&gt;]</panel_attributes>
+    <additional_attributes>10.0;10.0;80.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2320</x>
+      <y>1250</y>
+      <w>120</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=[&gt;]-[&gt;]</panel_attributes>
+    <additional_attributes>10.0;10.0;100.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2410</x>
+      <y>1250</y>
+      <w>70</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=[&gt;]-[&gt;]</panel_attributes>
+    <additional_attributes>10.0;10.0;50.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1450</x>
+      <y>1100</y>
+      <w>370</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=.
+
+setup()
+
+--
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1330</x>
+      <y>1130</y>
+      <w>140</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=[&gt;]-[&gt;]</panel_attributes>
+    <additional_attributes>10.0;10.0;120.0;10.0</additional_attributes>
+  </element>
+</diagram>

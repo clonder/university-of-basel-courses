@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+SCRIPTDIR="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
+
+if ! $SCRIPTDIR/repo-valid '.'; then
+    exit 1
+fi
+
+authors=$(git show-ref | grep refs/heads/*)
+AUTHORS=$(echo "$authors" | cut -d ' ' -f 2 | sed 's|refs/heads/||')
+
+while read -r AUTHOR; do
+    if [[ -z $(git show-ref "refs/delivered/$AUTHOR") ]]; then
+        mess=$(git log refs/heads/$AUTHOR --pretty=oneline --topo-order --format='%H')
+    else
+        mess=$(git log refs/heads/$AUTHOR ^"refs/delivered/$AUTHOR" --pretty=oneline --topo-order --format='%H')
+    fi
+    echo $mess
+    git update-ref "refs/delivered/$AUTHOR" "refs/heads/$AUTHOR"
+done <<< "$AUTHORS"

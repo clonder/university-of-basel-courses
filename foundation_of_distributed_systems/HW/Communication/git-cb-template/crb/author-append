@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+# This script is used to create a new Git commit in a repository with a specified author and message.
+
+SCRIPTDIR="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
+
+AUTHOR=$1
+MSG=$2
+
+if ! $SCRIPTDIR/repo-valid '.'; then
+    exit 1
+fi
+
+if [ -z "$AUTHOR" ]; then
+    echo "Empty author '$AUTHOR'" >&2
+    exit 1
+fi
+
+if [ -z "$MSG" ]; then
+    echo "Empty message '$MSG'" >&2
+    exit 1
+fi
+
+if ! git show-ref "refs/heads/$AUTHOR" 1>/dev/null 2>/dev/null; then
+    echo "Branch for author '$AUTHOR' does not exist" >&2
+    exit 1
+fi
+
+# Define a special tree object identifier used to create an initial commit.
+tree='4b825dc642cb6eb9a060e54bf8d69288fbee4904'
+
+# Retrieve the hashes of existing commits in the repository.
+OLD_COMMITS=$(git show-ref --head -s | tr '\n' ' ')
+
+# Create a new commit using the special tree and provided commit message, referencing the previous commits.
+NEW_COMMIT=$(git commit-tree "$tree" -m "$MSG" $(echo "$OLD_COMMITS" | sed 's/\([^ ]\+\)/-p \1/g'))
+
+# Update the reference refs/heads/$AUTHOR to point to the new commit, creating a new branch or updating an existing one.
+git update-ref "refs/heads/$AUTHOR" "$NEW_COMMIT"
+
+# Display a message indicating that a commit was created for the specified author with the given message.
+echo "Commit created for author '$AUTHOR' with message: '$MSG'"

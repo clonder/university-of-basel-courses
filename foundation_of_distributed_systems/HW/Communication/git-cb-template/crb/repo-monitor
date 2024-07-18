@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+SCRIPTDIR="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
+
+INTERVAL=$1
+
+
+
+if ! $SCRIPTDIR/repo-valid '.'; then
+    exit 1
+fi
+
+
+if [ -z "$INTERVAL" ]; then
+    git log $($SCRIPTDIR/repo-frontier) --pretty=oneline --decorate-refs='refs/heads/*' --decorate-refs='refs/delivered/*' --decorate-refs='refs/remotes/*' --format="%C(yellow)%h%Creset %Cgreen(%an)%Creset %s %Cred %d %Creset" --graph; 
+else
+    while true; do 
+        clear; 
+        git log $($SCRIPTDIR/repo-frontier) --pretty=oneline --decorate-refs='refs/heads/*' --decorate-refs='refs/delivered/*' --decorate-refs='refs/remotes/*' --format="%C(yellow)%h%Creset %Cgreen(%an)%Creset %s %Cred %d %Creset" --graph; 
+        sleep $INTERVAL; 
+    done
+fi
+
+

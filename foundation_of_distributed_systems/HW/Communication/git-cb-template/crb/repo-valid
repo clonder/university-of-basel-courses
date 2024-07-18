@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+REPOPATH=$1
+
+if [ -z $REPOPATH ]; then 
+    echo "Empty repository path '$REPOPATH'" >&2
+    exit 1
+fi
+
+if ! test -d $REPOPATH/.git; then
+    echo "Invalid Git repository at $REPOPATH" >&2
+    exit 1
+fi
+
+if ! test -f $REPOPATH/.git/git-cb; then
+    echo "Invalid git-cb repository at $REPOPATH, missing 'git-cb' file" >&2
+    exit 1
+fi
+

@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+REPOPATH=$1
+NAME=$2
+
+if [ -z $REPOPATH ]; then 
+    echo "Empty repository path '$REPOPATH'" >&2
+    exit 1
+fi
+
+if test -d $REPOPATH; then
+    echo "Directory '$REPOPATH' already exists" >&2
+    exit 1
+fi
+
+if [ -z $NAME ]; then
+    NAME=$REPOPATH
+fi
+
+if echo "$NAME" | grep -e "\/"; then
+    echo "Invalid repository name '$NAME', must not contain the '/' character" >&2
+    exit 1 
+fi
+
+mkdir -p $REPOPATH
+git init $REPOPATH 2>/dev/null
+echo "$NAME" >  $REPOPATH/.git/git-cb
+
+cd $REPOPATH
+git write-tree 2>/dev/null 1>/dev/null
+echo "git-cb repo initialization successful"
+

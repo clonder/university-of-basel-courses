@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+SCRIPTDIR="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
+
+if ! $SCRIPTDIR/repo-valid '.'; then
+    exit 1
+fi
+
+MSG=$1
+AUTHOR=$(cat .git/git-cb)
+
+if ! $SCRIPTDIR/author-append $AUTHOR "$MSG"; then
+    exit 1
+fi
+
+REMOTES=$(git remote)
+
+if [ -z "$REMOTES" ]; then
+    echo "No remote repository known" >&2
+fi
+
+for ORIGIN in $REMOTES; do
+    if ! $SCRIPTDIR/repo-push $ORIGIN; then
+        echo "Error pushing new messages to '$ORIGIN'" >&2
+    fi
+done

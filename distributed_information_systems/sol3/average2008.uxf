@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.0.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLHierarchy</id>
+    <coordinates>
+      <x>40</x>
+      <y>310</y>
+      <w>300</w>
+      <h>290</h>
+    </coordinates>
+    <panel_attributes>type=Package
+input
+	amz
+		links</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>490</x>
+      <y>420</y>
+      <w>370</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>lt=.
+
+map()
+
+--
+key: Text =&gt; As ReviewId
+value: Text =&gt; Corresponding Product Ids
+--
+T: &lt;key:Text, value:Text&gt;
+&lt;R000000002D,B00006LA7P&gt; 
+&lt;R000000002E,B00006LA7P&gt; 
+&lt;R000000002F,B002NZV68U)&gt; </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>930</x>
+      <y>420</y>
+      <w>440</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>lt=.
+
+reduce()
+
+--
+key: Text =&gt; The ReviewId as key
+value: IntPairWritable =&gt; Double as mean score
+--
+T: &lt;key:Text, value:DoubleWritable&gt;
+&lt;B00006LA7P, 0.0&gt; 
+&lt;B002NZV68U, 0.666))&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>380</x>
+      <y>160</y>
+      <w>1080</w>
+      <h>440</h>
+    </coordinates>
+    <panel_attributes>
+AverageReviewScore
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>1560</x>
+      <y>390</y>
+      <w>230</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>reviewTxt
+--
+..
+B00006LA7P	0.032340209
+B0009P42UU	0.032339997
+B002NZV68U	0.032339407
+..
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLHierarchy</id>
+    <coordinates>
+      <x>1500</x>
+      <y>160</y>
+      <w>300</w>
+      <h>440</h>
+    </coordinates>
+    <panel_attributes>type=Package
+output
+	amz
+		links</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>330</x>
+      <y>440</y>
+      <w>70</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=[&gt;]-[&gt;]</panel_attributes>
+    <additional_attributes>10.0;10.0;50.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>370</x>
+      <y>440</y>
+      <w>140</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=[&gt;]-[&gt;]</panel_attributes>
+    <additional_attributes>10.0;10.0;120.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>850</x>
+      <y>440</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=[&gt;]-[&gt;]</panel_attributes>
+    <additional_attributes>10.0;10.0;80.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1360</x>
+      <y>440</y>
+      <w>120</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=[&gt;]-[&gt;]</panel_attributes>
+    <additional_attributes>10.0;10.0;100.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1450</x>
+      <y>440</y>
+      <w>70</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=[&gt;]-[&gt;]</panel_attributes>
+    <additional_attributes>10.0;10.0;50.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>490</x>
+      <y>210</y>
+      <w>370</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>lt=.
+
+setup()
+
+--
+key: Text =&gt; The ReviewId as key
+value: IntPairWritable =&gt; Ccunt of pos and neg occurence
+--
+T: &lt;key:Text, value:IntPairWritable&gt;
+&lt;R000000002D,(2,2)&gt; 
+&lt;R000000002E,(2,2)&gt;
+&lt;R000000002F,(4,2))&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>370</x>
+      <y>240</y>
+      <w>140</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=[&gt;]-[&gt;]</panel_attributes>
+    <additional_attributes>10.0;10.0;120.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLHierarchy</id>
+    <coordinates>
+      <x>40</x>
+      <y>160</y>
+      <w>300</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>type=Package
+output
+	acl</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>330</x>
+      <y>240</y>
+      <w>70</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=[&gt;]-[&gt;]</panel_attributes>
+    <additional_attributes>10.0;10.0;50.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>660</x>
+      <y>380</y>
+      <w>30</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=[&gt;]-[&gt;]</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLHierarchy</id>
+    <coordinates>
+      <x>40</x>
+      <y>830</y>
+      <w>300</w>
+      <h>290</h>
+    </coordinates>
+    <panel_attributes>type=Package
+input
+	amz
+		productInfo</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>490</x>
+      <y>940</y>
+      <w>370</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>lt=.
+
+map()
+
+--
+key: Text =&gt; As ReviewId
+value: Text =&gt; As review text with wordd in setup
+--
+T: &lt;key:Text, value:Text&gt;
+&lt;B00006LA7P, 2009&gt;
+&lt;B002NZV68U, 2008&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>930</x>
+      <y>940</y>
+      <w>440</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>lt=.
+
+reduce()
+
+--
+key: Text =&gt; The ReviewId as key
+value: IntPairWritable =&gt; Integer as count of pos and neg occurence
+--
+T: &lt;key:Text, value:IntPairWritable&gt;
+&lt;B002NZV68U, 0.666&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>380</x>
+      <y>680</y>
+      <w>1080</w>
+      <h>440</h>
+    </coordinates>
+    <panel_attributes>
+TopReviewYear
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>1560</x>
+      <y>930</y>
+      <w>230</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>reviewTxt
+--
+B001JP65AY	0.8760683760683
+B001AS0NYO	0.875
+B003DCU88Q	0.875
+B003DCYAC6	0.875
+B0032167F6	0.8125
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLHierarchy</id>
+    <coordinates>
+      <x>1500</x>
+      <y>680</y>
+      <w>300</w>
+      <h>440</h>
+    </coordinates>
+    <panel_attributes>type=Package
+output
+	amz
+		productInfo</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>330</x>
+      <y>960</y>
+      <w>70</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=[&gt;]-[&gt;]</panel_attributes>
+    <additional_attributes>10.0;10.0;50.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>370</x>
+      <y>960</y>
+      <w>140</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=[&gt;]-[&gt;]</panel_attributes>
+    <additional_attributes>10.0;10.0;120.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>850</x>
+      <y>960</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=[&gt;]-[&gt;]</panel_attributes>
+    <additional_attributes>10.0;10.0;80.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1360</x>
+      <y>960</y>
+      <w>120</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=[&gt;]-[&gt;]</panel_attributes>
+    <additional_attributes>10.0;10.0;100.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1450</x>
+      <y>960</y>
+      <w>70</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=[&gt;]-[&gt;]</panel_attributes>
+    <additional_attributes>10.0;10.0;50.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>490</x>
+      <y>730</y>
+      <w>370</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>lt=.
+
+setup()
+
+--
+key: Text =&gt; The ReviewId as key
+value: IntPairWritable =&gt; Double as mean score
+--
+T: &lt;key:Text, value:DoubleWritable&gt;
+&lt;B00006LA7P, 0.0&gt; 
+&lt;B002NZV68U, 0.666))&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>370</x>
+      <y>760</y>
+      <w>140</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=[&gt;]-[&gt;]</panel_attributes>
+    <additional_attributes>10.0;10.0;120.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>660</x>
+      <y>900</y>
+      <w>30</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=[&gt;]-[&gt;]</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>190</x>
+      <y>590</y>
+      <w>1490</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>lt=[&gt;]-[&gt;]</panel_attributes>
+    <additional_attributes>190.0;180.0;10.0;180.0;10.0;50.0;1470.0;50.0;1470.0;10.0</additional_attributes>
+  </element>
+</diagram>

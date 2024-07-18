@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+# This script is intended for pushing local Git branches to a remote repository. 
+
+SCRIPTDIR="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
+
+ORIGIN=$1
+
+# Get the name of the current local branch (the directory name).
+LOCAL=$(basename $(pwd))
+
+
+if ! $SCRIPTDIR/repo-valid '.'; then
+    exit 1
+fi
+
+if [ -z "$ORIGIN" ]; then
+    echo "Empty origin '$ORIGIN'" >&2
+    exit 1
+fi
+
+if ! git remote show $ORIGIN 1>/dev/null 2>/dev/null; then
+    echo "Remote repository at '$ORIGIN' unknown. Please add with 'git remote add $ORIGIN URL' first." >&2
+    exit 1
+fi
+
+# Push all local branches (refs/heads/*) to the corresponding remote branches (refs/remotes/$LOCAL/*).
+git push $ORIGIN "refs/heads/*:refs/remotes/$LOCAL/*"

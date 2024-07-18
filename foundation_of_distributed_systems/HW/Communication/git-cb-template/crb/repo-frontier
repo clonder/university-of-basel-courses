@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+SCRIPTDIR="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
+
+if ! $SCRIPTDIR/repo-valid '.'; then
+    exit 1
+fi
+
+REMOTE_FRONTIER=$(git show-ref | grep -e 'refs\/remotes' | awk '{ print $1 }' ORS=' ')
+LOCAL_FRONTIER=$(git show-ref | grep -e 'refs\/heads\/' | awk '{ print $1 }' ORS=' ')
+
+echo $REMOTE_FRONTIER $LOCAL_FRONTIER

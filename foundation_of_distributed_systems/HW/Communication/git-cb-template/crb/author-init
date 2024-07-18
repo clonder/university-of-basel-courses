@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+SCRIPTDIR="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
+
+NAME=$1
+
+if ! $SCRIPTDIR/repo-valid '.'; then
+    exit 1
+fi
+
+if [ -z $NAME ]; then
+    echo "Empty name '$NAME'" >&2
+    exit 1
+fi
+
+if git branch $NAME 2>/dev/null; then
+    echo "Branch for participant named '$NAME' already exists" >&2
+    exit 1
+fi
+
+COMMIT=$(echo "Author '$NAME' initialized" | GIT_COMMITTER_NAME="$NAME" GIT_AUTHOR_NAME="$NAME" GIT_COMMITTER_EMAIL="" GIT_AUTHOR_EMAIL="" git commit-tree 4b825dc642cb6eb9a060e54bf8d69288fbee4904)
+
+if [ $? -ne 0 ]; then
+    echo "Error initializing branch for '$NAME', aborting" >&2
+    exit 1 
+fi
+
+git update-ref "refs/heads/$NAME" "$COMMIT"
